@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-function App() {
+import { getUser } from "./redux/ducks/user";
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
+  const user = useSelector((state) => state.user.user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', backgroundColor: "grey", padding: "40px"}}>
+      <h1>Redux-Saga</h1>
+      <p>Redux-Saga manages async requests such as data fetching</p>
+      { user === undefined && <h1>Now Loading...</h1>}
+      { user === false && <h1>Error, fetch failed</h1> }
+      { user && <h1>Welcom, {user.firstname}</h1>}
     </div>
   );
 }
-
+ 
 export default App;
