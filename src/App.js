@@ -14,8 +14,8 @@ const App = () => {
 
   return (
     <div style={{ textAlign: 'center', backgroundColor: "grey", padding: "40px"}}>
-      <h1>Redux-Saga!</h1>
-      <p>Redux-Saga manages async requests such as data fetching</p>
+      <h1>Redux-Saga</h1>
+      <p>redux-saga is a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, easy to test, and better at handling failures.</p>
       { user === undefined && <h1>Now Loading...</h1>}
       { user === false && <h1>Error, fetch failed</h1>}
       { user && <h1>Welcom, {user.firstname}</h1>}
