@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div style={{ textAlign: 'center', backgroundColor: "grey", padding: "40px"}}>
-      <h1>Redux-Saga</h1>
+      <h1>Redux-Saga!</h1>
       <p>Redux-Saga manages async requests such as data fetching</p>
       { user === undefined && <h1>Now Loading...</h1>}
       { user === false && <h1>Error, fetch failed</h1> }
